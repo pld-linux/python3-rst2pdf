@@ -60,7 +60,7 @@ Podręcznik do biblioteki rst2pdf.
 %prep
 %setup -q -n rst2pdf-%{version}
 
-%{__sed} -i -e 's,python ,%{__python3} ,' doc/gen_docs.sh
+%{__sed} -i -e '2iset -eu' -e 's,python ,%{__python3} ,' doc/gen_docs.sh
 
 %build
 %py3_build
@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.rst
+%doc CHANGES.rst Contributors.txt LICENSE.txt README.rst
 %attr(755,root,root) %{_bindir}/rst2pdf
 %attr(755,root,root) %{_bindir}/rst2pdf-3
 %{py3_sitescriptdir}/rst2pdf
