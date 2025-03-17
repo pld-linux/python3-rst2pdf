@@ -21,12 +21,12 @@ BuildRequires:	sed >= 4.0
 %if %{with doc}
 BuildRequires:	docutils
 BuildRequires:	python3-PyYAML
-BuildRequires:	python3-ReportLab
 BuildRequires:	python3-docutils
 BuildRequires:	python3-importlib_metadata
 BuildRequires:	python3-jinja2
 BuildRequires:	python3-packaging
 BuildRequires:	python3-pygments
+BuildRequires:	python3-reportlab
 # gen_docs.sh calls rst2pdf from $PATH
 BuildRequires:	python3-rst2pdf >= 0.99
 BuildRequires:	python3-smartypants
