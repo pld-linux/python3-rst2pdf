@@ -5,16 +5,17 @@
 Summary:	Convert reStructured Text to PDF via ReportLab
 Summary(pl.UTF-8):	Konwersja formatu reStructured Text do PDF przy użyciu ReportLaba
 Name:		python3-rst2pdf
-Version:	0.99
-Release:	4
+Version:	0.103.1
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/rst2pdf/
 Source0:	https://files.pythonhosted.org/packages/source/r/rst2pdf/rst2pdf-%{version}.tar.gz
-# Source0-md5:	dbec71c69c3a6b2915c52c529a3fd4ab
+# Source0-md5:	e806058707cd622eccb97f15d4d71da9
 URL:		https://rst2pdf.org/
+BuildRequires:	python3-build
+BuildRequires:	python3-installer
 BuildRequires:	python3-modules >= 1:3.6
-BuildRequires:	python3-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	sed >= 4.0
@@ -63,7 +64,7 @@ Podręcznik do biblioteki rst2pdf.
 %{__sed} -i -e '2iset -eu' -e 's,python ,%{__python3} ,' doc/gen_docs.sh
 
 %build
-%py3_build
+%py3_build_pyproject
 
 %if %{with doc}
 cd doc
@@ -73,7 +74,7 @@ cd doc
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%py3_install
+%py3_install_pyproject
 
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/rst2pdf{,-3}
 ln -sf rst2pdf-3 $RPM_BUILD_ROOT%{_bindir}/rst2pdf
@@ -92,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/rst2pdf
 %attr(755,root,root) %{_bindir}/rst2pdf-3
 %{py3_sitescriptdir}/rst2pdf
-%{py3_sitescriptdir}/rst2pdf-%{version}-py*.egg-info
+%{py3_sitescriptdir}/rst2pdf-%{version}.dist-info
 %if %{with doc}
 %{_mandir}/man1/rst2pdf.1*
 %endif
