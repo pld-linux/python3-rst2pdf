@@ -16,8 +16,10 @@ URL:		https://rst2pdf.org/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
 BuildRequires:	python3-modules >= 1:3.6
+BuildRequires:	python3-setuptools >= 1:64
+BuildRequires:	python3-setuptools_scm >= 8
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
+BuildRequires:	rpmbuild(macros) >= 2.044
 BuildRequires:	sed >= 4.0
 %if %{with doc}
 BuildRequires:	docutils
