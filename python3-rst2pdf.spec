@@ -5,13 +5,13 @@
 Summary:	Convert reStructured Text to PDF via ReportLab
 Summary(pl.UTF-8):	Konwersja formatu reStructured Text do PDF przy użyciu ReportLaba
 Name:		python3-rst2pdf
-Version:	0.103.1
-Release:	2
+Version:	0.105
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/rst2pdf/
 Source0:	https://files.pythonhosted.org/packages/source/r/rst2pdf/rst2pdf-%{version}.tar.gz
-# Source0-md5:	e806058707cd622eccb97f15d4d71da9
+# Source0-md5:	9c5ae5ea38c877e66590618e35c05eba
 URL:		https://rst2pdf.org/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
